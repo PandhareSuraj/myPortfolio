@@ -152,7 +152,7 @@ export const testimonials = [
     role: "Academic Guide"
   },
   {
-    quote: "Her ability to work across Android, backend, and frontend makes collaboration faster and more practical.",
+    quote: "His ability to work across Android, backend, and frontend makes collaboration faster and more practical.",
     name: "Team Collaborator",
     role: "Developer Peer"
   },

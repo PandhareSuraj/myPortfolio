@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://suraj-pandhare.dev"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Suraj Pandhare | Full Stack & Android Developer",
     template: "%s | Suraj Pandhare"
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Suraj Pandhare | Full Stack & Android Developer",
     description: "Portfolio, projects, services, GitHub work, and contact details.",
-    url: "https://suraj-pandhare.dev",
+    url: siteUrl,
     siteName: "Suraj Pandhare Portfolio",
     images: [{ url: "/images/myphoto1.jpg", width: 1200, height: 630, alt: "Suraj Pandhare" }],
     locale: "en_IN",

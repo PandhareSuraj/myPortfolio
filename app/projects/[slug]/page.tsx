@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowUpRight, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { projects } from "@/data/portfolio";
+import { assetPath } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -70,7 +71,7 @@ export default async function ProjectCaseStudy({ params }: Props) {
             </div>
           </div>
           <div className="glass relative overflow-hidden rounded-2xl p-3">
-            <Image src={project.image} width={900} height={650} alt={`${project.name} project preview`} className="aspect-[4/3] rounded-xl object-cover" />
+            <Image src={assetPath(project.image)} width={900} height={650} alt={`${project.name} project preview`} className="aspect-[4/3] rounded-xl object-cover" />
           </div>
         </section>
 
@@ -129,7 +130,7 @@ export default async function ProjectCaseStudy({ params }: Props) {
           <div className="grid gap-4 md:grid-cols-3">
             {project.gallery.map((image) => (
               <div key={image} className="glass relative overflow-hidden rounded-2xl p-2">
-                <Image src={image} width={640} height={480} alt={`${project.name} gallery image`} className="aspect-[4/3] rounded-xl object-cover" />
+                <Image src={assetPath(image)} width={640} height={480} alt={`${project.name} gallery image`} className="aspect-[4/3] rounded-xl object-cover" />
               </div>
             ))}
           </div>

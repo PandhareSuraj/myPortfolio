@@ -25,6 +25,7 @@ import { TypingEffect } from "@/components/typing-effect";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { certifications, profile, projects, services, skills, testimonials, timeline } from "@/data/portfolio";
+import { assetPath, siteUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navItems = ["About", "Skills", "Projects", "Experience", "Education", "Contact"];
@@ -110,7 +111,7 @@ export default function Home() {
     name: profile.name,
     jobTitle: "Full Stack Developer and Android Developer",
     email: profile.email,
-    url: "https://suraj-pandhare.dev",
+    url: siteUrl,
     sameAs: [profile.github, profile.linkedin],
     knowsAbout: Object.values(skills).flat()
   };
@@ -159,7 +160,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="primary" size="lg">
-                <a href="/images/Resume.png" download>
+                <a href={assetPath("/images/Resume.png")} download>
                   <Download className="h-4 w-4" /> Download Resume
                 </a>
               </Button>
@@ -191,7 +192,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.1 }} className="relative">
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-blue-500/25 via-cyan-400/20 to-transparent blur-2xl" />
             <div className="glass relative rounded-[2rem] p-4">
-              <Image src="/images/myphoto1.jpg" width={900} height={1100} priority alt="Suraj Pandhare portrait" className="aspect-[4/5] rounded-[1.5rem] object-cover" />
+              <Image src={assetPath("/images/myphoto1.jpg")} width={900} height={1100} priority alt="Suraj Pandhare portrait" className="aspect-[4/5] rounded-[1.5rem] object-cover" />
               <div className="absolute -bottom-6 left-6 right-6 grid grid-cols-3 gap-3 rounded-2xl border border-border bg-background/85 p-4 text-center shadow-panel backdrop-blur-xl">
                 <div><p className="text-2xl font-bold"><AnimatedCounter value={12} />+</p><p className="text-xs text-muted-foreground">Projects</p></div>
                 <div><p className="text-2xl font-bold"><AnimatedCounter value={6} />+</p><p className="text-xs text-muted-foreground">Stacks</p></div>
@@ -260,7 +261,7 @@ export default function Home() {
               <motion.article key={project.slug} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.55, delay: index * 0.05 }} className="group glass overflow-hidden rounded-2xl">
                 <div className="grid md:grid-cols-[0.9fr_1.1fr]">
                   <div className="relative min-h-72 overflow-hidden bg-muted">
-                    <Image src={project.image} alt={`${project.name} preview`} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                    <Image src={assetPath(project.image)} alt={`${project.name} preview`} fill className="object-cover transition duration-500 group-hover:scale-105" />
                   </div>
                   <div className="p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">{project.eyebrow}</p>
