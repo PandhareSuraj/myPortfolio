@@ -120,45 +120,54 @@ export default function Home() {
     <main className="overflow-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <header className="fixed left-0 right-0 top-4 z-50 mx-auto w-[min(1120px,calc(100%-1.5rem))]">
-        <nav className="glass flex items-center justify-between rounded-full px-3 py-2">
-          <a href="#home" className="flex items-center gap-2 px-2 text-sm font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground">P</span>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/55 backdrop-blur-2xl">
+        <nav className="content-shell flex h-16 items-center justify-between lg:h-20">
+          <a href="#home" className="group flex items-center gap-2 text-sm font-bold">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground shadow-glow transition group-hover:scale-105">S</span>
             Suraj.dev
           </a>
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="rounded-full px-3 py-2 text-sm text-muted-foreground transition hover:text-foreground">
+              <a key={item} href={`#${item.toLowerCase()}`} className="text-[15px] font-medium text-muted-foreground transition hover:text-foreground">
                 {item}
               </a>
             ))}
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-3">
+            <Button asChild variant="primary" size="sm" className="hidden md:inline-flex">
+              <a href="#contact">Hire Me</a>
+            </Button>
+            <ThemeToggle />
+          </div>
         </nav>
       </header>
 
-      <section id="home" className="relative flex min-h-screen items-center px-4 pb-20 pt-32">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:72px_72px] opacity-25" />
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium backdrop-blur">
+      <section id="home" className="relative overflow-hidden px-4 pb-20 pt-32 lg:pb-28 lg:pt-40">
+        <div className="biz-grid absolute inset-0 -z-20" />
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -left-36 top-20 h-[520px] w-[520px] animate-float rounded-full bg-primary/25 blur-3xl" />
+          <div className="absolute -right-28 top-32 h-[460px] w-[460px] rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
+        <div className="content-shell">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mx-auto max-w-5xl text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-muted-foreground shadow-panel backdrop-blur">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              Available for internships, freelance work, and startup teams
+              BizFlow-style portfolio system for internships, jobs, and startup teams
             </div>
-            <h1 className="text-balance text-5xl font-semibold tracking-tight sm:text-7xl lg:text-8xl">
-              Hi, I&apos;m Suraj Pandhare.
+            <h1 className="text-balance bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-7xl lg:text-8xl">
+              Suraj Pandhare builds scalable software experiences.
             </h1>
-            <p className="mt-5 text-balance text-2xl font-medium text-muted-foreground sm:text-3xl">
+            <p className="mx-auto mt-5 max-w-3xl text-balance text-2xl font-medium text-muted-foreground sm:text-3xl">
               I build <TypingEffect words={["scalable apps.", "Android products.", "full-stack systems.", "clean user experiences."]} />
             </p>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
               MCS student, full stack developer, and Android developer passionate about building fast,
               polished applications with practical architecture and thoughtful interfaces.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild variant="primary" size="lg">
                 <a href={assetPath("/images/Resume.png")} download>
                   <Download className="h-4 w-4" /> Download Resume
@@ -170,7 +179,7 @@ export default function Home() {
                 </a>
               </Button>
             </div>
-            <div className="mt-7 flex gap-3">
+            <div className="mt-7 flex justify-center gap-3">
               <Button asChild variant="ghost" className="h-11 w-11 px-0" aria-label="GitHub">
                 <a href={profile.github} target="_blank" rel="noreferrer">
                   <Code2 className="h-5 w-5" />
@@ -189,14 +198,42 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.1 }} className="relative">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-blue-500/25 via-cyan-400/20 to-transparent blur-2xl" />
-            <div className="glass relative rounded-[2rem] p-4">
-              <Image src={assetPath("/images/myphoto1.jpg")} width={900} height={1100} priority alt="Suraj Pandhare portrait" className="aspect-[4/5] rounded-[1.5rem] object-cover" />
-              <div className="absolute -bottom-6 left-6 right-6 grid grid-cols-3 gap-3 rounded-2xl border border-border bg-background/85 p-4 text-center shadow-panel backdrop-blur-xl">
-                <div><p className="text-2xl font-bold"><AnimatedCounter value={12} />+</p><p className="text-xs text-muted-foreground">Projects</p></div>
-                <div><p className="text-2xl font-bold"><AnimatedCounter value={6} />+</p><p className="text-xs text-muted-foreground">Stacks</p></div>
-                <div><p className="text-2xl font-bold"><AnimatedCounter value={95} suffix="+" /></p><p className="text-xs text-muted-foreground">Score target</p></div>
+          <motion.div initial={{ opacity: 0, y: 34, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative mx-auto mt-14 max-w-6xl">
+            <div className="absolute -inset-8 rounded-[2rem] bg-primary/20 blur-3xl" />
+            <div className="glass relative overflow-hidden rounded-[1.75rem] p-4">
+              <div className="flex items-center justify-between border-b border-white/10 px-2 pb-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-red-400" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">Developer command center</p>
+              </div>
+              <div className="grid gap-4 pt-4 lg:grid-cols-[0.85fr_1.15fr]">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
+                  <div className="flex items-center gap-4">
+                    <Image src={assetPath("/images/myphoto1.jpg")} width={96} height={96} priority alt="Suraj Pandhare portrait" className="h-20 w-20 rounded-2xl object-cover" />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Full Stack & Android Developer</p>
+                      <h2 className="mt-1 text-2xl font-semibold">Suraj Pandhare</h2>
+                      <p className="mt-2 text-sm text-muted-foreground">{profile.location}</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                    <div className="rounded-2xl bg-background/70 p-4"><p className="text-2xl font-bold"><AnimatedCounter value={12} />+</p><p className="text-xs text-muted-foreground">Projects</p></div>
+                    <div className="rounded-2xl bg-background/70 p-4"><p className="text-2xl font-bold"><AnimatedCounter value={6} />+</p><p className="text-xs text-muted-foreground">Stacks</p></div>
+                    <div className="rounded-2xl bg-background/70 p-4"><p className="text-2xl font-bold"><AnimatedCounter value={95} suffix="+" /></p><p className="text-xs text-muted-foreground">Score</p></div>
+                  </div>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {projects.slice(0, 4).map((project) => (
+                    <div key={project.slug} className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{project.eyebrow}</p>
+                      <h3 className="mt-3 text-lg font-semibold">{project.name}</h3>
+                      <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">{project.impact}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
