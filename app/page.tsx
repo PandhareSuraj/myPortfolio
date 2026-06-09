@@ -155,7 +155,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              BizFlow-style portfolio system for internships, jobs, and startup teams
+              Portfolio system for internships, jobs, and startup teams
             </div>
             <h1 className="text-balance bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-7xl lg:text-8xl">
               Suraj Pandhare builds scalable software experiences.
