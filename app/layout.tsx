@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Portfolio, projects, services, GitHub work, and contact details.",
     url: siteUrl,
     siteName: "Suraj Pandhare Portfolio",
-    images: [{ url: "/images/myphoto1.jpg", width: 1200, height: 630, alt: "Suraj Pandhare" }],
+    images: [{ url: "/images/suraj-formal.png", width: 960, height: 1600, alt: "Suraj Pandhare" }],
     locale: "en_IN",
     type: "website"
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Suraj Pandhare | Developer Portfolio",
     description: "Full stack and Android developer portfolio.",
-    images: ["/images/myphoto1.jpg"]
+    images: ["/images/suraj-formal.png"]
   },
   alternates: {
     canonical: "/"

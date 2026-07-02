@@ -212,7 +212,14 @@ export default function Home() {
               <div className="grid gap-4 pt-4 lg:grid-cols-[0.85fr_1.15fr]">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
                   <div className="flex items-center gap-4">
-                    <Image src={assetPath("/images/myphoto1.jpg")} width={96} height={96} priority alt="Suraj Pandhare portrait" className="h-20 w-20 rounded-2xl object-cover" />
+                    <Image
+                      src={assetPath("/images/suraj-formal.png")}
+                      width={320}
+                      height={400}
+                      priority
+                      alt="Suraj Pandhare in formal business attire"
+                      className="h-32 w-28 shrink-0 rounded-2xl object-cover object-top shadow-glow sm:h-36 sm:w-32"
+                    />
                     <div>
                       <p className="text-sm text-muted-foreground">Full Stack & Android Developer</p>
                       <h2 className="mt-1 text-2xl font-semibold">Suraj Pandhare</h2>
