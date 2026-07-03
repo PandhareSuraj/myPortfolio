@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   BriefcaseBusiness,
   Code2,
   Download,
@@ -20,6 +18,7 @@ import {
 } from "lucide-react";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { ContactForm } from "@/components/contact-form";
+import { ProjectShowcaseCard } from "@/components/project-showcase-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TypingEffect } from "@/components/typing-effect";
 import { Button } from "@/components/ui/button";
@@ -300,30 +299,9 @@ export default function Home() {
       <section id="projects" className="px-4 py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Projects" title="Selected GitHub work with product-focused case studies." body="Projects are sourced from the PandhareSuraj GitHub account and shaped into portfolio-ready narratives." />
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
-              <motion.article key={project.slug} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.55, delay: index * 0.05 }} className="group glass overflow-hidden rounded-2xl">
-                <div className="grid md:grid-cols-[0.9fr_1.1fr]">
-                  <div className="relative min-h-72 overflow-hidden bg-muted">
-                    <Image src={assetPath(project.image)} alt={`${project.name} preview`} fill className="object-cover transition duration-500 group-hover:scale-105" />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">{project.eyebrow}</p>
-                    <h3 className="mt-3 text-2xl font-semibold">{project.name}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{project.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 4).map((tech) => (
-                        <span key={tech} className="rounded-full border border-border px-3 py-1 text-xs font-medium">{tech}</span>
-                      ))}
-                    </div>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      <Button asChild size="sm" variant="outline"><a href={project.github} target="_blank" rel="noreferrer"><Code2 className="h-4 w-4" /> GitHub</a></Button>
-                      <Button asChild size="sm" variant="outline"><a href={project.demo} target="_blank" rel="noreferrer">Live Demo <ArrowUpRight className="h-4 w-4" /></a></Button>
-                      <Button asChild size="sm" variant="primary"><Link href={`/projects/${project.slug}`}>Case Study</Link></Button>
-                    </div>
-                  </div>
-                </div>
-              </motion.article>
+              <ProjectShowcaseCard key={project.slug} project={project} index={index} />
             ))}
           </div>
         </div>

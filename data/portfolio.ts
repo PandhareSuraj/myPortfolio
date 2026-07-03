@@ -44,8 +44,13 @@ export const projects: Project[] = [
     name: "DairyFlow",
     eyebrow: "Android business operations",
     description: "A Kotlin-powered mobile workflow for dairy product businesses to manage products, daily activity, and operational visibility.",
-    image: "/images/app.svg",
-    gallery: ["/images/app.svg", "/images/portfolio.png", "/images/web.svg"],
+    image: "/images/projects/dairyflow/dashboard.png",
+    gallery: [
+      "/images/projects/dairyflow/dashboard.png",
+      "/images/projects/dairyflow/customer-calendar.png",
+      "/images/projects/dairyflow/performance.png",
+      "/images/projects/dairyflow/deliveries.png"
+    ],
     technologies: ["Kotlin", "Android Studio", "Jetpack Compose", "REST APIs"],
     features: ["Product workflow modules", "Mobile-first operational dashboard", "Clean Android architecture", "Business-ready UX"],
     github: "https://github.com/PandhareSuraj/DairyFlow",

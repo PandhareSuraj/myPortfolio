@@ -71,7 +71,7 @@ export default async function ProjectCaseStudy({ params }: Props) {
             </div>
           </div>
           <div className="glass relative overflow-hidden rounded-2xl p-3">
-            <Image src={assetPath(project.image)} width={900} height={650} alt={`${project.name} project preview`} className="aspect-[4/3] rounded-xl object-cover" />
+            <Image src={assetPath(project.image)} width={1200} height={675} alt={`${project.name} project preview`} className="aspect-video rounded-xl bg-slate-50 object-contain" />
           </div>
         </section>
 
@@ -127,10 +127,10 @@ export default async function ProjectCaseStudy({ params }: Props) {
 
         <section className="pb-16">
           <h2 className="mb-6 text-3xl font-semibold">Image Gallery</h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {project.gallery.map((image) => (
               <div key={image} className="glass relative overflow-hidden rounded-2xl p-2">
-                <Image src={assetPath(image)} width={640} height={480} alt={`${project.name} gallery image`} className="aspect-[4/3] rounded-xl object-cover" />
+                <Image src={assetPath(image)} width={1200} height={675} alt={`${project.name} gallery image`} className="aspect-video rounded-xl bg-slate-50 object-contain" />
               </div>
             ))}
           </div>
