@@ -97,7 +97,7 @@ export function ProjectShowcaseCard({ project, index }: ProjectShowcaseCardProps
                 alt={`${project.name} project preview`}
                 fill
                 className={
-                  project.slug === "dairyflow"
+                  project.slug === "dairyflow" || project.slug === "eduflow"
                     ? "bg-slate-50 object-contain p-2 transition duration-700 group-hover:saturate-[1.08]"
                     : "object-cover transition duration-700 group-hover:saturate-[1.12]"
                 }

@@ -64,22 +64,22 @@ export const projects: Project[] = [
     }
   },
   {
-    slug: "enjoy-free-deals",
-    name: "EnjoyFreeDeals",
-    eyebrow: "Deals discovery app",
-    description: "A Kotlin Android app concept for surfacing free deals and offers through a clean, fast mobile experience.",
-    image: "/images/portfolio.png",
-    gallery: ["/images/portfolio.png", "/images/app.svg", "/images/web.svg"],
-    technologies: ["Kotlin", "Android", "Material UI", "GitHub"],
-    features: ["Offer-focused interface", "Responsive mobile screens", "Reusable UI patterns", "Fast browsing flow"],
-    github: "https://github.com/PandhareSuraj/EnjoyFreeDeals",
-    demo: "https://github.com/PandhareSuraj/EnjoyFreeDeals",
-    updatedAt: "2026-05-18T05:34:07Z",
-    impact: "Turns offer discovery into a simple mobile-first journey.",
+    slug: "eduflow",
+    name: "EduFlow",
+    eyebrow: "Education management platform",
+    description: "A full-stack education management platform for running student, academic, finance, hostel, transport, and library workflows in one place.",
+    image: "/images/projects/eduflow/preview.png",
+    gallery: ["/images/projects/eduflow/preview.png"],
+    technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
+    features: ["Student lifecycle management", "Academic and finance modules", "Role-based administration", "Analytics dashboards"],
+    github: "https://github.com/PandhareSuraj/EduFlow",
+    demo: "https://edu-flow-alpha-sable.vercel.app",
+    updatedAt: "2026-06-29T07:03:26Z",
+    impact: "Brings institution-wide operations into one responsive management platform.",
     caseStudy: {
-      problem: "Users need a low-friction way to browse useful deals without visual clutter.",
-      solution: "The app organizes deal content into clear Android screens and reusable components.",
-      outcome: "It strengthens the mobile portfolio with a consumer-facing product pattern."
+      problem: "Educational institutions often manage student records, academics, payments, facilities, and communication across disconnected systems.",
+      solution: "EduFlow unifies the core workflows in a responsive React application backed by Supabase, with focused modules and role-aware administration.",
+      outcome: "The project demonstrates the architecture and product thinking needed to turn complex institutional operations into a clear digital experience."
     }
   },
   {
